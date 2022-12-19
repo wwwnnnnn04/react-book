@@ -1,11 +1,12 @@
 .container{
-    width: 470px;
+    width: 500px;
     display: flex;
     flex-direction: row;
     margin-top: 10px;
+
 }
 .inp{
-    width: 450px;
+    width: 100%;
     font-size: 20px;
     padding: 5px;
     color:black;
@@ -21,4 +22,13 @@
     font-size: 20px;
     background-color:white;
     border: 1px solid white;
+    padding-top: 5px;
+}
+.search:hover{
+    color:gray;
+}
+@media (max-width:600px) and (min-width:200px){
+    .container{
+        width: 80%;
+    }
 }
