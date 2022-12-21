@@ -11,6 +11,14 @@ const Body = () => {
         {id:1,img:'https://rust.litnet.com/uploads/covers/120/1663974979_25.jpg', categories:'comp', title:'Node.js  приложений', author:'Дэвид Хэрон'},
         {id:2, img:'https://rust.litnet.com/uploads/covers/120/1664877721_19.jpg', categories:'comp', title:'Node.js Разработка серверных приложений', author:'Дэвид Хэрон'},
         {id:3, img:'https://rust.litnet.com/uploads/covers/120/1663974979_25.jpg', categories:'comp', title:'Node.js Разработка  приложений', author:'Дэвид Хэрон'},
+        {id:4, img:'https://rust.litnet.com/uploads/covers/120/1664877721_19.jpg', categories:'comp', title:'Разработка серверных приложений', author:'Дэвид Хэрон'},
+        {id:1,img:'https://rust.litnet.com/uploads/covers/120/1663974979_25.jpg', categories:'comp', title:'Node.js  приложений', author:'Дэвид Хэрон'},
+        {id:2, img:'https://rust.litnet.com/uploads/covers/120/1664877721_19.jpg', categories:'comp', title:'Node.js Разработка серверных приложений', author:'Дэвид Хэрон'},
+        {id:3, img:'https://rust.litnet.com/uploads/covers/120/1663974979_25.jpg', categories:'comp', title:'Node.js Разработка  приложений', author:'Дэвид Хэрон'},
+        {id:4, img:'https://rust.litnet.com/uploads/covers/120/1664877721_19.jpg', categories:'comp', title:'Разработка ожений', author:'Дэвид Хэрон'},
+        {id:1,img:'https://rust.litnet.com/uploads/covers/120/1663974979_25.jpg', categories:'comp', title:'Node.js  приложений', author:'Дэвид Хэрон'},
+        {id:2, img:'https://rust.litnet.com/uploads/covers/120/1664877721_19.jpg', categories:'comp', title:'Node.js Разработка серверных приложений', author:'Дэвид Хэрон'},
+        {id:3, img:'https://rust.litnet.com/uploads/covers/120/1663974979_25.jpg', categories:'comp', title:'Node.js Разработка  приложений', author:'Дэвид Хэрон'},
         {id:4, img:'https://rust.litnet.com/uploads/covers/120/1664877721_19.jpg', categories:'comp', title:'Разработка серверных приложений', author:'Дэвид Хэрон'}
    
     ])
