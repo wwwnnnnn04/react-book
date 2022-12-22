@@ -24,8 +24,7 @@ const Body = () => {
     ])
     return (
         <div className={s.container}>
-        
-        {card.map(cards=> <CardBook cards={cards} key={cards.id}/>)}
+            {card.map(cards=> <CardBook cards={cards} key={cards.id}/>)}
         </div>
     );
 };

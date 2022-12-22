@@ -5,6 +5,8 @@
     align-items:center;
     padding: 5px;
     border-radius:5px;
+    text-decoration:none;
+    color:black;
 }
 .card{
     width: 100%;
