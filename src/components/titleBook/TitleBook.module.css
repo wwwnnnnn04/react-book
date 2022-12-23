@@ -1,0 +1,31 @@
+.cont{
+    padding-top: 20px;
+    padding-left: 20px;
+    color:black;
+    width: 50%;
+}
+.categ{
+    color: gray;
+}
+.title{
+    margin-top: 30px;
+    font-size: 25px;
+}
+.author{
+    margin-top: 10px;
+    color:gray;text-decoration: underline;
+}
+.descr{
+    margin-top: 30px;
+    margin-bottom: 10px;
+}
+ @media (max-width:426px) and (min-width:319px){
+    .cont{
+        width: 90%;
+    }
+ }
+ @media (max-width:2560px) and (min-width:1540px){
+    .cont{
+        font-size: 25px;
+    }
+}

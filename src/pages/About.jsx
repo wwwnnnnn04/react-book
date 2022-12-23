@@ -1,10 +1,12 @@
 import React from 'react';
 import ImgBook from '../components/imgBook/ImgBook';
 import TitleBook from '../components/titleBook/TitleBook';
+import s from './About.module.css'
+
 
 const About = () => {
     return (
-        <div>
+        <div className={s.cont}>
             <ImgBook />
             <TitleBook />
         </div>

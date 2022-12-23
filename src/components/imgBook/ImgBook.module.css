@@ -7,9 +7,31 @@
     align-items: center;
 
 }
-
 .img{
     width: 60%;
     height: auto;
     box-shadow: rgb(128, 125, 125) 8px 8px 5px;
+}
+
+@media (max-width:768px) and (min-width:426px){
+   .cont{
+    height: 550px;
+   }
+}
+@media (max-width:426px) and (min-width:319px){
+   .cont{
+    width: 100%;
+    height: 350px;
+   }
+   .img{
+    width: 50%;
+   }
+}
+@media (max-width:2560px) and (min-width:1540px){
+    .cont{
+        width: 30%;
+    }
+    .img{
+        width: 50%;
+    }
 }
