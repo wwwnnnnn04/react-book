@@ -2,9 +2,9 @@ import React from 'react';
 import s from './CardBook.module.css';
 import { Link } from 'react-router-dom';
 
-const CardBook = (props) => {
+const CardBook = ({...props}) => {
     return (
-        <Link to='/about' className={s.cont}>
+        <Link to='/about' {...props} className={s.cont}>
            <img className={s.img} src={props.cards.img} alt='load'/>
            <div className={s.card}>
                 <section className={s.categ}>{props.cards.categories}</section>
