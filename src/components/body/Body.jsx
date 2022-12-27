@@ -24,12 +24,13 @@ const Body = () => {
     ])
 
 const searchImgClick =(e)=>{
-    console.log(e.target)
+    console.log(e.target.img)
+    
 }
 
     return (
         <div className={s.container}>
-            {card.map(cards=> <CardBook  onClick={searchImgClick}  cards={cards} key={cards.id}/>)}
+            {card.map(cards=> <CardBook onClick={searchImgClick} cards={cards} key={cards.id}/>)}
         </div>
     );
 };
