@@ -8,6 +8,9 @@
     text-decoration:none;
     color:black;
 }
+.cont:hover{
+    opacity: 0.8;
+}
 .card{
     width: 100%;
 }

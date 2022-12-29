@@ -28,6 +28,12 @@ const searchImgClick =(e)=>{
     
 }
 
+const [isLoading, setIsLoading] = useState(false);
+
+const loadingPage = ()=>{
+    setIsLoading(true)
+}
+
     return (
         <div className={s.container}>
             {card.map(cards=> <CardBook onClick={searchImgClick} cards={cards} key={cards.id}/>)}
