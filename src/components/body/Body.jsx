@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import CardBook from '../cardBook/CardBook';
+import Loading from '../loading/Loading';
 import s from './Body.module.css';
 
 const Body = () => {
@@ -23,20 +24,26 @@ const Body = () => {
    
     ])
 
-const searchImgClick =(e)=>{
-    console.log(e.target.img)
-    
-}
+    const CardLoading = Loading(CardBook);
+    const [cardState, setCardState] = useState({
+        loading:false,
+        repos:null
+    });
+    useEffect(()=>{
+        setCardState({loading:true});
+        const apiUrl = `https://api.github.com/users/hacktivist123/repos`;
+        fetch(apiUrl)
+        .then((res)=>res.json())
+        .then((repos)=>{
+            setCardState({loading:false, repos:repos});
+        });
+    }, [setCardState]);
 
-const [isLoading, setIsLoading] = useState(false);
-
-const loadingPage = ()=>{
-    setIsLoading(true)
-}
 
     return (
         <div className={s.container}>
-            {card.map(cards=> <CardBook onClick={searchImgClick} cards={cards} key={cards.id}/>)}
+            <CardLoading isLoading={cardState.loading} repos={cardState.repos}/>
+            {card.map(cards=> <CardBook cards={cards} key={cards.id}/>)}
         </div>
     );
 };
