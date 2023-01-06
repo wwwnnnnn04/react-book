@@ -9,9 +9,8 @@ const InputSearch = (props) => {
         <form className={s.container}>
             <input {...props} className={s.inp}/>
             <Link to='/'>
-            <button className={s.search}><AiOutlineSearch /></button>
+            <button onClick={(event)=>console.log(event.click)} className={s.search}><AiOutlineSearch /></button>
             </Link>
-            
         </form>
      
     );
