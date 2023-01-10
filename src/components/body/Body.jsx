@@ -2,36 +2,32 @@ import React, { useState, useEffect } from 'react';
 import CardBook from '../cardBook/CardBook';
 import Loading from '../loading/Loading';
 import s from './Body.module.css';
-import axios from 'axios';
 
-const Body = () => {
-    let [card, setCard] = useState([
-        {id:1,img:'https://rust.litnet.com/uploads/covers/120/1663974979_25.jpg', categories:'comp', title:'Node.js  приложений', author:'Дэвид Хэрон'},
-        {id:2, img:'https://rust.litnet.com/uploads/covers/120/1664877721_19.jpg', categories:'comp', title:'Node.js Разработка серверных приложений', author:'Дэвид Хэрон'}
-    ])
+const Body = (props) => {
+    let [card, setCard] = useState([])
+    console.log('oooo',props.book)
+    // const CardLoading = Loading(CardBook);
+    // const [cardState, setCardState] = useState({
+    //     loading: false,
+    //     repos: null
+    // });
 
-    const CardLoading = Loading(CardBook);
-    const [cardState, setCardState] = useState({
-        loading:false,
-        repos:null
-    });
-    
-    // AIzaSyBcf8QHFYJ19u09jZftbdzaiL96yb4IvnE
-    useEffect(()=>{
-        setCardState({loading:true});
-        const apiUrl = `https://api.github.com/users/hacktivist123/repos`;
-        fetch(apiUrl)
-        .then((res)=>res.json())
-        .then((repos)=>{
-            setCardState({loading:false, repos:repos});
-        });
-    }, [setCardState]);
+    // useEffect(() => {
+    //     setCardState({ loading: true });
+    //     const apiUrl = `https://api.github.com/users/hacktivist123/repos`;
+    //     fetch(apiUrl)
+    //         .then((res) => res.json())
+    //         .then((repos) => {
+    //             setCardState({ loading: false, repos: repos });
+    //         });
+    // }, [setCardState]);
 
 
     return (
         <div className={s.container}>
-            <CardLoading isLoading={cardState.loading} repos={cardState.repos}/>
+            {/* <CardLoading isLoading={cardState.loading} repos={props.book} /> */}
             {/* {card.map(cards=> <CardBook cards={cards} key={cards.id}/>)} */}
+            {<CardBook book={props.book}/>}
         </div>
     );
 };
