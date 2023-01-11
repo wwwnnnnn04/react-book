@@ -1,11 +1,25 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import CardBook from '../cardBook/CardBook';
-import Loading from '../loading/Loading';
 import s from './Body.module.css';
 
 const Body = (props) => {
-    let [card, setCard] = useState([])
-    console.log('oooo',props.book)
+
+    const aboutBook = (bookItem) => {
+        props.item(bookItem);
+    }
+
+    return (
+        <div className={s.container}>
+            {<CardBook about={aboutBook} book={props.book} />}
+        </div>
+    );
+};
+
+export default Body;
+
+
+            // {/* <CardLoading isLoading={cardState.loading} repos={props.book} /> */}
+            // {/* {card.map(cards=> <CardBook cards={cards} key={cards.id}/>)} */}
     // const CardLoading = Loading(CardBook);
     // const [cardState, setCardState] = useState({
     //     loading: false,
@@ -21,15 +35,3 @@ const Body = (props) => {
     //             setCardState({ loading: false, repos: repos });
     //         });
     // }, [setCardState]);
-
-
-    return (
-        <div className={s.container}>
-            {/* <CardLoading isLoading={cardState.loading} repos={props.book} /> */}
-            {/* {card.map(cards=> <CardBook cards={cards} key={cards.id}/>)} */}
-            {<CardBook book={props.book}/>}
-        </div>
-    );
-};
-
-export default Body;

@@ -5,7 +5,6 @@ import Header from '../header/Header';
 const Layout = () => {
     const [book, setBook]=useState([])
     const founds = (bookData)=>{
-        console.log('ohh', bookData)
         setBook(bookData)
     }
     return (

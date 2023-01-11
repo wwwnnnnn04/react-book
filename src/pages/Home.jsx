@@ -5,7 +5,6 @@ import { useOutletContext } from 'react-router-dom';
 
 const Home = () => {
     const book = useOutletContext();
-    console.log('constext', book)
     return (
         <>
             <Found />

@@ -4,12 +4,7 @@ import s from './Header.module.css';
 import Option from '../option/Option';
 
 const Header = (props) => {
-    const [searchB, setSearchB] = useState('');
-
-    const searchBook = (bookData) => {
-    console.log(bookData);
-    props.found(bookData);
-    }
+    const [searchB, setSearchB] = useState('')
 
     return (
         <div className={s.head}>
@@ -17,7 +12,6 @@ const Header = (props) => {
             <InputSearch
                 searchB={searchB}
                 setSearchB={setSearchB}
-                search={searchBook}
             />
             <div className={s.cont}>
                 <Option />
