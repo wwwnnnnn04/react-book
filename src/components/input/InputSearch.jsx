@@ -6,20 +6,22 @@ import axios from 'axios';
 import { BookContext } from '../context/context';
 
 const InputSearch = (props) => {
-    const {setBookApi} = useContext(BookContext);
+    const {setBookApi, sort} = useContext(BookContext);
     let tap = false;
     const clickBut = (e) => {
         tap = true;
         if ((e.key === 'Enter' || tap === true) && props.searchB !== '') {
-            axios.get('https://www.googleapis.com/books/v1/volumes?q=' + props.searchB + ':keyes&key=AIzaSyBcf8QHFYJ19u09jZftbdzaiL96yb4IvnE' + '&maxResults=40')
+            axios.get('https://www.googleapis.com/books/v1/volumes?q=' + props.searchB + '+inauthor&orderBy='+sort+'&key=AIzaSyBcf8QHFYJ19u09jZftbdzaiL96yb4IvnE&maxResults=40')
                 .then(res => {
                     setBookApi(res.data.items)
+                    console.log('sort', sort)
                 })
                 .catch(err => console.log(err));
             tap = false;
         }
         props.setSearchB('')
     }
+    
 
     return (
         <form className={s.container}>

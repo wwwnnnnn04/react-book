@@ -15,8 +15,6 @@ const CardBook = () => {
     
 //ejonEAAAQBAJ
     
-
-    if (!bookApi || bookApi.length === 0) return <p>No repos, sorry</p>;
     return (
         <>
             {bookApi.map(rep => {
