@@ -1,9 +1,9 @@
-import React, {useContext} from 'react';
+import React, { useContext } from 'react';
 import s from './TitleBook.module.css';
 import { BookContext } from '../context/context';
 
 const TitleBook = () => {
-    const {aboutBook}=useContext(BookContext);
+    const { aboutBook } = useContext(BookContext);
     return (
         <div className={s.cont}>
             <section className={s.categ}>{aboutBook.volumeInfo.categories}</section>

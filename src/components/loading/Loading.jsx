@@ -1,13 +1,10 @@
 import React from 'react';
-function Loading(Component) {
-    return function WihLoadingComponent({ isLoading, ...props }) {
-      if (!isLoading) return <Component {...props} />;
-      return (
-        <p style={{ textAlign: 'center', fontSize: '30px' }}>
-          Hold on, fetching data may take some time 
-        </p>
-      );
-    };
-  }
+import s from './Loading.module.css'
+function Loading() {
+  return (
+    <div className={s.load}>
+    </div>
+  );
+}
 
 export default Loading;

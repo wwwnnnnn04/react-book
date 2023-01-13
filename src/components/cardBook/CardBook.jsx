@@ -5,7 +5,7 @@ import { BookContext } from '../context/context';
 import axios from 'axios';
 
 const CardBook = () => {
-    const { bookApi, setAboutBook, more, setMore, loading, setLoading } = useContext(BookContext);
+    const { bookApi, setAboutBook, setLoading } = useContext(BookContext);
 
 
     console.log(bookApi)
@@ -13,7 +13,7 @@ const CardBook = () => {
     const fetchBook = async () => {
         setLoading(r => !r);
         await axios.get('https://www.googleapis.com/books/v1/volumes/' + idBook + '?key=AIzaSyBcf8QHFYJ19u09jZftbdzaiL96yb4IvnE')
-            .then(res => { setAboutBook(res.data); console.log('card', res.data); setLoading(r=>!r);})
+            .then(res => { setAboutBook(res.data); console.log('card', res.data); setLoading(r => !r); })
             .catch(err => console.log(err));
     }
 

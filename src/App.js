@@ -9,11 +9,12 @@ function App() {
   const [bookApi, setBookApi] = useState([]);
   const [aboutBook, setAboutBook] = useState({});
   const [sort, setSort] = useState('relevance');
-  const [more, setMore] = useState(40)
+  const [more, setMore] = useState(10)
   const [loading, setLoading] = useState(false);
+  const [searchB, setSearchB] = useState('');
   return (
     
-    <BookContext.Provider value={{bookApi, setBookApi, aboutBook, setAboutBook, sort, setSort, more, setMore, loading, setLoading}}>
+    <BookContext.Provider value={{bookApi, setBookApi, aboutBook, setAboutBook, sort, setSort, more, setMore, loading, setLoading, searchB, setSearchB}}>
       <Routes>
         <Route path='/' element={<Layout />}>
           <Route index element={<Home />}/>
