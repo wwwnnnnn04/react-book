@@ -6,7 +6,7 @@ import axios from 'axios';
 import { BookContext } from '../context/context';
 
 const InputSearch = () => {
-    const { setBookApi, sort, more, setLoading, searchB, setSearchB } = useContext(BookContext);
+    const { setBookApi, sort, setLoading, searchB, setSearchB } = useContext(BookContext);
     let tap = false;
 
     const clickBut = (e) => {
@@ -16,13 +16,12 @@ const InputSearch = () => {
             axios.get('https://www.googleapis.com/books/v1/volumes?q=' + searchB + '+inauthor&orderBy=' + sort + '&key=AIzaSyBcf8QHFYJ19u09jZftbdzaiL96yb4IvnE&maxResults=10')
                 .then(res => {
                     setBookApi(res.data.items)
-                    console.log('sort', more)
                     setLoading(r => !r)
                 })
                 .catch(err => console.log(err));
             tap = false;
         }
-        setSearchB('')
+        // setSearchB('')
 
     }
 

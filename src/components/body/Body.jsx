@@ -8,9 +8,8 @@ const Body = () => {
     const { bookApi, setBookApi, more, setMore, searchB } = useContext(BookContext);
 
 
-    const loadMore = async () => {
-
-        await axios.get('https://www.googleapis.com/books/v1/volumes/?q=' + searchB + '+inauthor&key=AIzaSyBcf8QHFYJ19u09jZftbdzaiL96yb4IvnE&maxResults=10&startIndex=' + more)
+    const loadMore =  () => {
+         axios.get('https://www.googleapis.com/books/v1/volumes/?q=' + searchB + '+inauthor&key=AIzaSyBcf8QHFYJ19u09jZftbdzaiL96yb4IvnE&maxResults=10&startIndex=' + more)
             .then(res => { setBookApi([...bookApi, ...res.data.items]); console.log('more', res.data) })
             .catch(err => console.log(err));
         setMore(more + 10)

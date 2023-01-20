@@ -1,4 +1,4 @@
-import React, { useContext, useRef, useEffect } from 'react';
+import React, { useContext } from 'react';
 import s from './CardBook.module.css';
 import { Link } from 'react-router-dom';
 import { BookContext } from '../context/context';
@@ -7,8 +7,6 @@ import axios from 'axios';
 const CardBook = () => {
     const { bookApi, setAboutBook, setLoading } = useContext(BookContext);
 
-
-    console.log(bookApi)
     let idBook = '';
     const fetchBook = async () => {
         setLoading(r => !r);
@@ -16,7 +14,6 @@ const CardBook = () => {
             .then(res => { setAboutBook(res.data); console.log('card', res.data); setLoading(r => !r); })
             .catch(err => console.log(err));
     }
-
 
 
     return (
