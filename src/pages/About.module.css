@@ -1,9 +1,9 @@
-.cont{
-    display: flex;
-    flex-direction: row;
+.cont {
+  display: flex;
+  flex-direction: row;
 }
-@media (max-width:426px) and (min-width:319px){
-    .cont{
-        flex-direction: column;
-    }
+@media (max-width: 426px) and (min-width: 319px) {
+  .cont {
+    flex-direction: column;
+  }
 }

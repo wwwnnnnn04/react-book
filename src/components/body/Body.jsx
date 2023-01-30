@@ -5,26 +5,37 @@ import { BookContext } from '../context/context';
 import axios from 'axios';
 
 const Body = () => {
-    const { bookApi, setBookApi, more, setMore, searchB } = useContext(BookContext);
+  const { bookApi, setBookApi, more, setMore, searchB } =
+    useContext(BookContext);
 
+  const loadMore = () => {
+    axios
+      .get(
+        process.env.REACT_APP_API +
+          '/?q=' +
+          searchB +
+          '+inauthor&key=' +
+          process.env.REACT_APP_API_KEY +
+          '&maxResults=10&startIndex=' +
+          more
+      )
+      .then((res) => setBookApi([...bookApi, ...res.data.items]))
+      .catch((err) => console.log(err));
+    setMore(more + 10);
+  };
 
-    const loadMore =  () => {
-         axios.get('https://www.googleapis.com/books/v1/volumes/?q=' + searchB + '+inauthor&key=AIzaSyBcf8QHFYJ19u09jZftbdzaiL96yb4IvnE&maxResults=10&startIndex=' + more)
-            .then(res => { setBookApi([...bookApi, ...res.data.items]); console.log('more', res.data) })
-            .catch(err => console.log(err));
-        setMore(more + 10)
-        console.log(more)
-    }
-
-    return (
-        <>
-            <div className={s.container}>
-                <CardBook />
-            </div>
-            <div style={{ display: 'flex', justifyContent: 'center' }}><button className={s.load} onClick={loadMore}>Load more</button></div>
-        </>
-    );
+  return (
+    <>
+      <div className={s.container}>
+        <CardBook />
+      </div>
+      <div style={{ display: 'flex', justifyContent: 'center' }}>
+        <button className={s.load} onClick={loadMore}>
+          Load more
+        </button>
+      </div>
+    </>
+  );
 };
 
 export default Body;
-
